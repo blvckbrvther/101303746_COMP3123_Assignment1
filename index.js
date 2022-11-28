@@ -2,7 +2,7 @@ const bodyParser = require("body-parser");
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const port = 3003
+const port = process.env.PORT || 3000
 const userRoutes = require('./Routes/users')
 const employeeRoute = require('./Routes/employeeroute')
 const DB_URL = "mongodb+srv://blvckbrvther:Olayinka1_@cluster0.vxrfs3s.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority"

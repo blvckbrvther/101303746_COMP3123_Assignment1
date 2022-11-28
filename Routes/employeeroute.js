@@ -63,7 +63,9 @@ routes.delete("/employees/:eid", async (req, res) => {
             res.status(204).send("Employee Deleted")
 
     }
+    else{
     res.status(200).send("Employee not deleted")
+    }
 }
      catch (error) {
         res.status(400).send(error)

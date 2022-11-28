@@ -17,9 +17,14 @@ routes.post("/signup", async (req, res) => {
 //Login
 routes.post("/login", async (req, res) => {
     try {
-        const loginUser = await userModel.find()
-        await loginUser.save()
+        const loginUser = await userModel.findOne()
+        if(loginUser){
         res.status(200).send(loginUser)
+        }else{
+            res.status(200).json({
+                message: "Login not successful"
+            })
+        }
     } catch (error) {
         res.status(500).send(error)
     }
