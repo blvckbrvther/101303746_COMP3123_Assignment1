@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const express = require('express')
 const mongoose = require('mongoose')
+var cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
 const userRoutes = require('./Routes/users')
@@ -10,7 +11,7 @@ mongoose.connect(DB_URL,{
     useNewUrlParser: true,
      useUnifiedTopology: true
 })
-
+app.use(cors())
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
